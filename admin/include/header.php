@@ -24,9 +24,9 @@ if (empty($_SESSION["email"])) {
             display: none;
         }
 
-        .brand-title img { 
+        .brand-title img {
             height: 70px;
-            width: 70px; 
+            width: 70px;
             margin-left: 15px;
 
         }
@@ -163,11 +163,11 @@ if (empty($_SESSION["email"])) {
 
                     <li>
                         <a class="has-arrow" href="javascript:void()" aria-expanded="false">
-                            <i class="fa fa-user menu-icon"></i><span class="nav-text">All Professors</span>
+                            <i class="fa fa-users menu-icon"></i><span class="nav-text">All Professors</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="./add-post-details.php"><i class="icon-plus menu-icon"></i>Add Professor</a></li>
-                            <li><a href="./manage-post-details.php"><i class="fa fa-cog menu-icon"></i>Manage Professor</a></li>
+                            <li><a href="#"><i class="icon-plus menu-icon"></i>Add Professor</a></li>
+                            <li><a href="#"><i class="fa fa-cog menu-icon"></i>Manage Professor</a></li>
 
                         </ul>
                     </li>
@@ -175,16 +175,17 @@ if (empty($_SESSION["email"])) {
 
 
                     <li>
-                        <a href="./about-us.php">
-                            <i class="fa fa-users menu-icon"></i><span class="nav-text">All Students</span>
+                        <a href="#">
+                            <i class="fa fa-users" aria-hidden="true"></i><span class="nav-text">All Students</span>
                         </a>
                     </li>
 
                     <li>
                         <a href="./about-us.php">
-                            <i class="fa fa-users menu-icon"></i><span class="nav-text">About Us</span>
+                            <i class="fa fa-address-card menu-icon"></i><span class="nav-text">About Us</span>
                         </a>
                     </li>
+
 
                     <li>
                         <a href="./contact-us.php">
