@@ -13,7 +13,7 @@
  
 <div class="footer hide">
             <div class="copyright">
-                <p>Copyright &copy; Designed & Developed by <a href="#">Gurkirt</a> 2021</p>
+                <p>Copyright &copy; BSIT CPSU 2024</p>
             </div>
         </div>
         <!--**********************************

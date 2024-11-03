@@ -1,6 +1,6 @@
 <div class="col-lg-4 col-md-4 col-sm-4">
         <div class="latest_post">
-          <h2><span>Polular post</span></h2>
+          <h2><span>Popular post</span></h2>
           <div class="latest_post_container" style="height:500p; overflow: auto;">
             <ul class="latest_postnav" >
 

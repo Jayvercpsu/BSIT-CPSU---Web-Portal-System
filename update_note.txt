@@ -1,1 +1,50 @@
-landing page admin ✅
+1st user
+
+
+create a sign up and login page in
+student and instructor 
+
+student sign up 
+- first name 
+- Middle name
+- Last name
+Year (Option)
+1st Year to 4th Year
+
+if the student done selecting an option of the year, the student must go directly in his account for each corresponding account, 
+        
+student 
+- can view list of all professors view only 
+
+if 1st year login 
+theres a button 
+
+- My professors
+  under in my professors the students 
+- can view all update of each professors under on his subject (makita niya ang tanang update sa professor under niya)
+
+
+
+________________________________________________________________________________________________________________________
+
+
+
+2nd user 
+
+ Professors / instructor can view all of his students (nga under niya sa 1st year to 4th year)
+
+- can add, edit and delete students (sa iyahang under nga students sa 1st year to 4th year)
+- can post update 
+
+
+
+3rd user
+
+Super Admin / Admin
+
+- can manage all data 
+- can view all list of professor (can add, edit and delete)
+- can view all updates of the list of the professor 
+- can view list of all students from 1st year to 4th year 
+
+

@@ -86,16 +86,53 @@
       display: flex;
     }
 
+
+
+    .container {
+      margin: auto;
+      width: 100%;
+    }
+
+    .header_top_right {
+      float: left;
+      display: inline;
+      width: 50%;
+      text-align: right
+    }
+
+    .header_top_right>p {
+      color: #fff;
+      display: inline-block;
+      float: right;
+      font: bold 12px sans-serif;
+      margin-bottom: 0;
+      padding-bottom: 20px;
+      padding-right: 8px;
+      padding-top: 20px
+    }
+
+    .header_top {
+      background-color: #2c2c2c;
+      display: inline;
+      float: left;
+      padding: 0 30px;
+      width: 100%
+    }
+
+    .header_top_left {
+      float: left;
+      display: inline;
+      width: 50%
+    }
+
+
     /* Responsive styling */
     @media (max-width: 768px) {
       .header_main h1 {
-        font-size: 1.5rem;
+        font-size: 16px;
         margin: auto;
       }
 
-      .header_logo img {
-        height: 40px;
-      }
 
       .contact_info {
         flex-direction: column;
@@ -107,30 +144,50 @@
         margin-bottom: 5px;
       }
 
+
+      .navbar-collapse {
+        padding-left: 15px
+      }
+
+      .mobile-show {
+        display: block
+      }
+
+      .desktop-home {
+        display: none
+      }
+
+      .navbar-inverse .navbar-nav>li>a {
+        display: block
+      }
+
       .header_top_left {
-        display: inline-block;
+        width: 100%
       }
 
-      .header_top_right {
-        display: inline-block;
-        margin-top: 10px;
+      .header_top_right>p {
+        display: none
       }
 
-      .header_top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        flex-wrap: wrap;
+      .social_area {
+        display: none
       }
 
-      .top_nav {
-        display: inline-block;
+      .single_iteam a {
+        height: 100%
       }
-    }
 
-    .container {
-      margin: auto;
-      width: 100%;
+      .single_iteam a>img {
+        height: 100%
+      }
+
+      .error_page>a {
+        margin-bottom: 25px
+      }
+
+      .nav-tabs>li {
+        width: 32.6%
+      }
     }
   </style>
 </head>
@@ -165,12 +222,12 @@
     <header id="header">
       <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12">
-          <div class="header_top d-flex justify-content-between align-items-center">
+          <div class="header_top  ">
             <div class="header_top_left">
-              <ul class="top_nav d-flex flex-wrap m-0 p-0">
+              <ul class="top_nav ">
                 <li class="me-3"><a href="./index.php">Home</a></li>
-                <li class="me-3"><a href="#">Our Gallery</a></li>
-                <li class="me-3"><a href="#">Our Faculty</a></li>
+                <!-- <li class="me-3"><a href="#">Our Gallery</a></li>
+                <li class="me-3"><a href="#">Our Faculty</a></li> -->
                 <li class="me-3"><a href="./about-us.php">About us</a></li>
                 <li class="me-3"><a href="./contact-us.php">Contact Us</a></li>
               </ul>

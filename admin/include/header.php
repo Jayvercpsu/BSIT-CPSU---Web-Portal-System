@@ -1,8 +1,8 @@
-<?php 
-    session_start();
-    if( empty($_SESSION["email"]) ){
-        header("Location: login.php?login-first");
-    }
+<?php
+session_start();
+if (empty($_SESSION["email"])) {
+    header("Location: login.php?login-first");
+}
 
 ?>
 
@@ -13,16 +13,36 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>NewsFeed - Admin Pannel</title>
-    
+    <title>BSIT CPSU - Admin Pannel</title>
+
     <link href="./resorce/css/style.css" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
     <!-- <script src="ckeditor/ckeditor.js"></script> -->
 
-    <style> 
-     .hidden {
-         display: none;
-     }
+    <style>
+        .hidden {
+            display: none;
+        }
+
+        .brand-title img { 
+            height: 70px;
+            width: 70px; 
+            margin-left: 15px;
+
+        }
+
+        .brand-title .bsit {
+            color: white;
+            font-size: 40px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .brand-title {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin: 5px;
+        }
     </style>
 
 </head>
@@ -43,7 +63,7 @@
         Preloader end
     ********************-->
 
-     
+
 
 
 
@@ -59,14 +79,20 @@
         <!-- *********************************** -->
         <div class="nav-header">
 
-             <div class="brand-logo">
-             <!-- <div>hii</div> -->
-                <a >
-                    <span class="brand-title">
-    
-                    </span>
-                </a>
-            </div> 
+            <div class="brand-logo">
+                <!-- <div>hii</div> -->
+
+                <span class="brand-title">
+                    <div>
+                        <img src="../assets/image/bsit_logo.png" alt="BSIT">
+                    </div>
+                    <div class="bsit">
+                        BSIT
+                    </div>
+
+                </span>
+
+            </div>
         </div>
         <!--**********************************
             Nav header end
@@ -75,18 +101,18 @@
         <!--**********************************
             Header start
         ***********************************-->
-        <div class="header">    
+        <div class="header">
             <div class="header-content clearfix">
-                
+
                 <div class="nav-control">
                     <div class="hamburger">
                         <span class="toggle-icon"><i class="icon-menu"></i></span>
                     </div>
                 </div>
-               <div class="text-center">
-                <h2 class="pt-3"> NewsFeed </h2>
-                 </div>
-                
+                <div class="text-center">
+                    <h2 class="pt-3"> NewsFeed </h2>
+                </div>
+
             </div>
         </div>
         <!--**********************************
@@ -96,17 +122,17 @@
         <!--**********************************
             Sidebar start
         ***********************************-->
-        <div class="nk-sidebar">           
+        <div class="nk-sidebar">
             <div class="nk-nav-scroll">
                 <ul class="metismenu" id="menu">
-                   <br> <br>       
+                    <br> <br>
                     <li>
-                        <a href="./index.php"  >
+                        <a href="./index.php">
                             <i class="icon-home menu-icon"></i><span class="nav-text">Dashboard</span>
                         </a>
                     </li>
                     <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fa fa-list-alt menu-icon"></i><span class="nav-text">Post Topic</span>
                         </a>
                         <ul aria-expanded="false">
@@ -115,7 +141,7 @@
                         </ul>
                     </li>
                     <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fa fa-pencil-square-o menu-icon"></i><span class="nav-text">Post Content</span>
                         </a>
                         <ul aria-expanded="false">
@@ -125,7 +151,7 @@
                     </li>
 
                     <li>
-                    <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
                             <i class="fa fa-pencil-square-o menu-icon"></i><span class="nav-text">Post</span>
                         </a>
                         <ul aria-expanded="false">
@@ -133,31 +159,49 @@
                             <li><a href="./manage-post-details.php"><i class="fa fa-cog menu-icon"></i>Manage Post</a></li>
 
                         </ul>
-                      </li>
-
-                     
+                    </li>
 
                     <li>
-                        <a href="./about-us.php" >
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-user menu-icon"></i><span class="nav-text">All Professors</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./add-post-details.php"><i class="icon-plus menu-icon"></i>Add Professor</a></li>
+                            <li><a href="./manage-post-details.php"><i class="fa fa-cog menu-icon"></i>Manage Professor</a></li>
+
+                        </ul>
+                    </li>
+
+
+
+                    <li>
+                        <a href="./about-us.php">
+                            <i class="fa fa-users menu-icon"></i><span class="nav-text">All Students</span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="./about-us.php">
                             <i class="fa fa-users menu-icon"></i><span class="nav-text">About Us</span>
                         </a>
                     </li>
+
                     <li>
-                        <a href="./contact-us.php" >
+                        <a href="./contact-us.php">
                             <i class="fa fa-address-book menu-icon"></i><span class="nav-text">Contact Us</span>
                         </a>
                     </li>
-    
+
                     <li>
-                        <a href="./logout.php" >
+                        <a href="./logout.php">
                             <i class="icon-logout menu-icon"></i><span class="nav-text">Logout</span>
                         </a>
                     </li>
                     <li>
-                        <a href="./profile.php"  >
+                        <a href="./profile.php">
                             <i class="fa fa-user menu-icon"></i><span class="nav-text">Profile</span>
                         </a>
-                    </li>                 
+                    </li>
                 </ul>
             </div>
         </div>
@@ -172,30 +216,28 @@
 
 
 
-     
-        <div class="modal fade" id="showModal" data-backdrop="static" tabindex="-1" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div id="modalHead" class="modal-header">
-                    <button id="modal_cross_btn" type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span  aria-hidden="true">&times;</span>
-                </button>
-                </div>
-                <div class="modal-body">
-                    <p id="addMsg" class="text-center font-weight-bold"></p>
-                </div>
-                <div class="modal-footer ">
-                    <div class="mx-auto">
-                        <a type="button" id="linkBtn" href="#" class="btn btn-primary" >Add Expense For the Day</a>
-                        <a type="button" id="closeBtn" href="#" data-dismiss="modal" class="btn btn-primary">Close</a>
+
+            <div class="modal fade" id="showModal" data-backdrop="static" tabindex="-1" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                        <div id="modalHead" class="modal-header">
+                            <button id="modal_cross_btn" type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p id="addMsg" class="text-center font-weight-bold"></p>
+                        </div>
+                        <div class="modal-footer ">
+                            <div class="mx-auto">
+                                <a type="button" id="linkBtn" href="#" class="btn btn-primary">Add Expense For the Day</a>
+                                <a type="button" id="closeBtn" href="#" data-dismiss="modal" class="btn btn-primary">Close</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-            
+
             <!-- row -->
 
             <div class="container-fluid">
-
-            
