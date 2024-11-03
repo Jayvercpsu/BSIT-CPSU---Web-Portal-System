@@ -1,6 +1,42 @@
+<?php
+session_start();
+include('./include/connection.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $password = mysqli_real_escape_string($conn, $_POST['password']);
+
+    $sql = "SELECT * FROM users WHERE email='$email'";
+    $result = mysqli_query($conn, $sql);
+    if ($result && mysqli_num_rows($result) > 0) {
+        $user = mysqli_fetch_assoc($result);
+        
+        // Verify password
+        if (password_verify($password, $user['password'])) {
+            // Set session variables
+            $_SESSION['user_id'] = $user['id'];
+            $_SESSION['full_name'] = $user['full_name'];
+            $_SESSION['role'] = $user['role'];
+
+            // Redirect based on role
+            if ($user['role'] == 'student') {
+                header("Location: ./student/index.php");
+                exit();
+            } else if ($user['role'] == 'professor') {
+                header("Location: ./professors/index.php");
+                exit();
+            }
+        } else {
+            echo "Invalid email or password.";
+        }
+    } else {
+        echo "No user found with that email.";
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,14 +58,14 @@
         </div>
 
         <!-- Login Form -->
-        <form class="form" id="loginForm">
+        <form class="form" id="loginForm" method="POST">
             <div class="form-title"><span>Sign in to your</span></div>
             <div class="title-2"><span>ACCOUNT</span></div>
             <div class="input-container">
-                <input placeholder="Email" type="email" class="input-mail" required />
+                <input placeholder="Email" name="email" type="email" class="input-mail" required />
             </div>
             <div class="input-container">
-                <input placeholder="Password" type="password" class="input-pwd" required />
+                <input placeholder="Password" name="password" type="password" class="input-pwd" required />
             </div>
             <button class="submit" type="submit">
                 <span class="sign-text">Sign in</span>
@@ -52,5 +88,4 @@
     </script>
 
 </body>
-
 </html>
