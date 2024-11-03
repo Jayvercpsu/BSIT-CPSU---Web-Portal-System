@@ -209,8 +209,8 @@ if (empty($_SESSION["email"])) {
                             <i class="fa fa-users menu-icon"></i><span class="nav-text">All Professors</span>
                         </a>
                         <ul aria-expanded="false">
-                            <li><a href="#"><i class="icon-plus menu-icon"></i>Add Professor</a></li>
-                            <li><a href="#"><i class="fa fa-cog menu-icon"></i>Manage Professor</a></li>
+                            <li><a href="./add-professor.php"><i class="icon-plus menu-icon"></i>Add Professor</a></li>
+                            <li><a href="./manage-professor.php"><i class="fa fa-cog menu-icon"></i>Manage Professor</a></li>
 
                         </ul>
                     </li>
