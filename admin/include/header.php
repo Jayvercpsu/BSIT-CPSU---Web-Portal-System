@@ -214,14 +214,19 @@ if (empty($_SESSION["email"])) {
 
                         </ul>
                     </li>
-
-
-
                     <li>
-                        <a href="#">
-                            <i class="fa fa-users" aria-hidden="true"></i><span class="nav-text">All Students</span>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-users menu-icon"></i><span class="nav-text">All Students</span>
                         </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./add-students.php"><i class="icon-plus menu-icon"></i>Add Student</a></li>
+                            <li><a href="./manage-students.php"><i class="fa fa-cog menu-icon"></i>Manage Student</a></li>
+
+                        </ul>
                     </li>
+
+
+ 
 
                     <li>
                         <a href="./about-us.php">
