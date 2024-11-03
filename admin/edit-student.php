@@ -3,6 +3,28 @@ require_once "include/header.php";
 
 $name_error = $email_error = $year_error = $name = $email = $year = "";
 
+// Assuming you have a way to get the student ID (e.g., from a query string)
+if (isset($_GET['id'])) {
+    $student_id = $_GET['id'];
+
+    // Database connection 
+    require_once "include/connection.php";
+    
+    // Fetch student data
+    $query = "SELECT * FROM users WHERE id = '$student_id' AND role = 'student'";
+    $result = mysqli_query($conn, $query);
+    
+    if (mysqli_num_rows($result) > 0) {
+        $student = mysqli_fetch_assoc($result);
+        $name = $student['full_name'];
+        $email = $student['email'];
+        $year = $student['year'];
+    } else {
+        // Handle case where student is not found
+        echo "<p style='color:red'> * Student not found.</p>";
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Validate name
     if (empty($_REQUEST["student_name"])) {
@@ -33,29 +55,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Database connection 
         require_once "include/connection.php";
         
-        // Check if the email already exists
-        $email_check = "SELECT * FROM users WHERE email = '$email'";
+        // Check if the email already exists (except for the current student's email)
+        $email_check = "SELECT * FROM users WHERE email = '$email' AND id != '$student_id'";
         $result = mysqli_query($conn, $email_check);
 
         if (mysqli_num_rows($result) > 0) {
             $email_error = "<p style='color:red'> * Email already exists </p>";
         } else {
-            // Insert into users table with role set to 'student'
-            $add_user = "INSERT INTO users (full_name, email, role, year) VALUES ('$name', '$email', 'student', '$year')";
-            $add = mysqli_query($conn, $add_user);
-            if ($add) {
+            // Update student data in the users table
+            $update_user = "UPDATE users SET full_name = '$name', email = '$email', year = '$year' WHERE id = '$student_id'";
+            $update = mysqli_query($conn, $update_user);
+            if ($update) {
                 echo "<script>
                 $(document).ready(function() {
                     $('#showModal').modal('show');
                     $('#linkBtn').attr('href', 'manage-students.php');
                     $('#linkBtn').text('View All Students');
-                    $('#addMsg').text('Student Added Successfully!');
-                    $('#closeBtn').text('Add More');
+                    $('#addMsg').text('Student Updated Successfully!');
+                    $('#closeBtn').text('Update More');
                 });
                 </script>";
             } else {
-                // Handle insertion error
-                $name_error = "<p style='color:red'> * Error adding student. Please try again later.</p>";
+                // Handle update error
+                $name_error = "<p style='color:red'> * Error updating student. Please try again later.</p>";
             }
         }
     }
@@ -69,22 +91,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 <div class="form-input-content">
                     <div class="card login-form mb-0">
                         <div class="card-body pt-5 shadow">                       
-                            <h4 class="text-center pb-3">Add Student</h4>
-                            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>">
+                            <h4 class="text-center pb-3">Edit Student</h4>
+                            <form method="POST" action="<?php echo htmlspecialchars($_SERVER['PHP_SELF'] . '?id=' . $student_id); ?>">
                                 <div class="form-group">
                                     <label>Student Name:</label>
-                                    <input type="text" class="form-control" value="<?php echo $name; ?>" name="student_name">
+                                    <input type="text" class="form-control" value="<?php echo htmlspecialchars($name); ?>" name="student_name">
                                     <?php echo $name_error; ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Email:</label>
-                                    <input type="email" class="form-control" value="<?php echo $email; ?>" name="student_email">
+                                    <input type="email" class="form-control" value="<?php echo htmlspecialchars($email); ?>" name="student_email">
                                     <?php echo $email_error; ?>
                                 </div>
                                 <div class="form-group">
                                     <label>Year:</label>
                                     <select class="form-control" name="student_year">
-                                        <option value="" disabled selected>Select Year</option>
+                                        <option value="" disabled>Select Year</option>
                                         <option value="1st Year" <?php echo ($year == '1st Year') ? 'selected' : ''; ?>>1st Year</option>
                                         <option value="2nd Year" <?php echo ($year == '2nd Year') ? 'selected' : ''; ?>>2nd Year</option>
                                         <option value="3rd Year" <?php echo ($year == '3rd Year') ? 'selected' : ''; ?>>3rd Year</option>
@@ -92,7 +114,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                     </select>
                                     <?php echo $year_error; ?>
                                 </div>
-                                <button type="submit" class="btn btn-primary btn-block">Add</button>
+                                <button type="submit" class="btn btn-primary btn-block">Update</button>
                             </form>
                         </div>
                     </div>
