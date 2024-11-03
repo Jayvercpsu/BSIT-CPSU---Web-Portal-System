@@ -4,12 +4,23 @@
 create a sign up and login page in
 student and instructor 
 
-student sign up 
+ sign up page  
 - first name 
 - Middle name
 - Last name
-Year (Option)
+role (Option)
+Student or Professor
+if the user select student this Year (Option)
 1st Year to 4th Year
+
+wil shown and if professor 
+ths - first name 
+- Middle name
+- Last name
+
+only will shown 
+
+ 
 
 if the student done selecting an option of the year, the student must go directly in his account for each corresponding account, 
         

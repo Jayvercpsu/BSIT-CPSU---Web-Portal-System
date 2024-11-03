@@ -3,7 +3,7 @@
 $dbhost = "localhost";
 $dbuser = "root";
 $dbpass = "";
-$dbname = "newsfeed";
+$dbname = "bsit";
 
 $conn = mysqli_connect($dbhost , $dbuser , $dbpass , $dbname);
 

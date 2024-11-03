@@ -95,7 +95,7 @@
 
     .header_top_right {
       float: left;
-      display: inline;
+      display: inline; 
       width: 50%;
       text-align: right
     }
@@ -196,6 +196,8 @@
   <div id="preloader">
     <div id="status">&nbsp;</div>
   </div>
+
+  
   <a class="scrollToTop" href="#"><i class="fa fa-angle-up"></i></a>
 
   <div class="container1">
@@ -205,7 +207,7 @@
           <p><a href="mailto:"><i class="fa fa-envelope"></i> bsit_cpsu@edu.ph</a></p>
           <div class="top_links">
             <a href="#"><i class="fa fa-phone"></i> +63 9173-015-565</a>
-            <a href="#"><i class="fa fa-user"></i> Login</a>
+            <a href="signup.php"><i class="fa fa-user"></i> sign up</a>
           </div>
         </div>
       </div>

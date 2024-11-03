@@ -24,27 +24,70 @@ if (empty($_SESSION["email"])) {
             display: none;
         }
 
-        .brand-title img {
-            height: 70px;
-            width: 70px;
-            margin-left: 15px;
+        .nav-header {
+        background-color: #333;
+        padding: 15px 20px;
+        display: flex;
+        justify-content: center;
+    }
 
+    .brand-logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .brand-title {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+
+    .logo-container img {
+        height: 70px;
+        width: 70px;
+        border-radius: 50%; /* Adds a rounded effect */
+        transition: transform 0.3s;
+    }
+
+    .logo-container img:hover {
+        transform: scale(1.1); /* Hover effect */
+    }
+
+    .brand-title .bsit {
+        color: #fff;
+        font-size: 32px;
+        font-family: 'Arial', sans-serif;
+        font-weight: bold;
+        text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+
+    @media (max-width: 768px) {
+        .brand-title .bsit {
+            font-size: 24px;
+        }
+
+        .logo-container img {
+            height: 50px;
+            width: 50px;
+        }
+
+        .nav-header {
+            padding: 10px 15px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .brand-title {
+            flex-direction: column;
+            text-align: center;
         }
 
         .brand-title .bsit {
-            color: white;
-            font-size: 40px;
-            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
         }
-
-        .brand-title {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            margin: 5px;
-        }
-    </style>
-
+    }
+</style>
 </head>
 
 <body>
@@ -68,35 +111,35 @@ if (empty($_SESSION["email"])) {
 
 
 
+<!--**********************************
+    Main wrapper start
+***********************************-->
+<div id="main-wrapper">
 
     <!--**********************************
-        Main wrapper start
+        Nav header start
     ***********************************-->
-    <div id="main-wrapper">
-
-        <!--**********************************
-            Nav header start
-        <!-- *********************************** -->
-        <div class="nav-header">
-
-            <div class="brand-logo">
-                <!-- <div>hii</div> -->
-
-                <span class="brand-title">
-                    <div>
-                        <img src="../assets/image/bsit_logo.png" alt="BSIT">
-                    </div>
-                    <div class="bsit">
-                        BSIT
-                    </div>
-
-                </span>
-
-            </div>
+    <div class="nav-header">
+        <div class="brand-logo">
+            <span class="brand-title">
+                <div class="logo-container">
+                    <img src="../assets/image/bsit_logo.png" alt="BSIT">
+                </div>
+                <div class="bsit">
+                    BSIT
+                </div>
+            </span>
         </div>
-        <!--**********************************
-            Nav header end
-        ***********************************-->
+    </div>
+    <!--**********************************
+        Nav header end
+    ***********************************-->
+
+
+
+
+
+
 
         <!--**********************************
             Header start
