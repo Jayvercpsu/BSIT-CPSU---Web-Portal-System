@@ -47,7 +47,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "<script>
                 $(document).ready(function() {
                     $('#showModal').modal('show');
-                    $('#linkBtn').attr('href', 'manage-student.php');
+                    $('#linkBtn').attr('href', 'manage-studentsg.php');
                     $('#linkBtn').text('View All Students');
                     $('#addMsg').text('Student Added Successfully!');
                     $('#closeBtn').text('Add More');
