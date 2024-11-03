@@ -102,13 +102,13 @@
 
     .header_top_right>p {
       color: #fff;
-      display: inline-block;
-      float: right;
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
       font: bold 12px sans-serif;
-      margin-bottom: 0;
-      padding-bottom: 20px;
-      padding-right: 8px;
-      padding-top: 20px
+      margin: 0;
+      padding: 20px 8px 0 0;
+      /* Combines padding-top and padding-right */
     }
 
     .header_top {
