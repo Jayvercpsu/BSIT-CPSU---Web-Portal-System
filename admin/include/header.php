@@ -225,7 +225,15 @@ if (empty($_SESSION["email"])) {
                         </ul>
                     </li>
 
-
+                    <li>
+                        <a class="has-arrow" href="javascript:void()" aria-expanded="false">
+                            <i class="fa fa-list-alt menu-icon"></i><span class="nav-text">Welcome Message</span>
+                        </a>
+                        <ul aria-expanded="false">
+                            <li><a href="./add-welcome-message.php"> <i class="icon-plus menu-icon"></i>Add Message</a></li>
+                            <li><a href="./manage-welcome-message.php"><i class="fa fa-cog menu-icon"></i>Manage Message</a></li>
+                        </ul>
+                    </li>
  
 
                     <li>

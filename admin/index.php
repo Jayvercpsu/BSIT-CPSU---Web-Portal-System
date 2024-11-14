@@ -48,9 +48,9 @@ $total_students = mysqli_fetch_assoc($total_students_result)['total_students'];
 $total_professors_query = "SELECT COUNT(*) as total_professors FROM users WHERE role = 'professor'";
 $total_professors_result = mysqli_query($conn, $total_professors_query);
 $total_professors = mysqli_fetch_assoc($total_professors_result)['total_professors'];
-?>
+?>  
 
-<style>
+<style> 
 table, th, td {
   border: 1px solid black;
   padding: 5px;
